@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+            font-stretch: narrower;
+            letter-spacing: -0.03em;
+
+        }
+
+        body{
+            background-image: url(images/body_back.PNG);
+            background-repeat: repeat-x;
+        }
+
+        #wrap{
+            min-width:1200px;
+            max-width:1400px;
+
+            margin:0 auto;
+
+            height:500px;
+
+         
+        }
+
+        #header-top{
+            height:35px;
+
+            overflow: hidden;
+        }
+
+        #header-top > span{
+            color:#fefefe;
+            font-size: 1.3em;
+            font-weight: 600;
+
+            display: block;
+            float: left;
+
+            margin-right:30px;
+
+            line-height: 35px;
+        }
+
+        #header-top ul{
+            list-style: none;
+            overflow: hidden;
+        }
+
+        #header-top ul > li{
+            color:#fefefe;
+
+            line-height: 35px;
+        }
+
+        ul#today-info{
+            float: left;
+        }
+
+        ul#today-info > li {
+            padding:0px 10px;
+            float:left
+        }        
+
+        ul#today-info > li:nth-child(2n+1){
+            color: #454550;
+        }
+
+        ul#today-info > li > span{
+            padding:0 10px;
+            font-size: 1.1em;
+        }
+
+        ul#user-menu{
+            float: right;
+        }
+
+        ul#user-menu > li {
+            width:100px;
+            height: 35px;           
+
+            text-align: center;
+            float:right;
+            
+            font-size: 1.2em;
+            font-weight: 550;
+
+            border-left:1px solid #454550;;
+
+            position:relative;
+        }
+        ul#user-menu > li >select{
+            width:80px;
+            height:35px;
+            background-color: #31343d;
+            border:none;
+            color:#fefefe;
+
+            position:absolute;
+            left:10px;bottom:0;          
+        }
+
+        ul#user-menu > li > span{
+            position:absolute;
+            left:10px;bottom:0;          
+            z-index: 99999;
+        }
+
+        #logo_gnb{
+            overflow: hidden;
+        }
+        #logo{
+            width:200px;
+            height:95px;
+            
+            background-image: url('images/logo.png');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            float: left;
+        }
+
+        #gnb{
+            float: right;
+        }
+
+        #gnb > ul{
+            list-style: none;
+            overflow: hidden;            
+        }
+
+        #gnb > ul > li{
+            width:120px;
+            height:95px;
+
+            font-size:1.7em;
+            font-weight: 700;
+            color:#333;
+
+            text-align: center;
+            line-height: 95px;
+
+            float: left;
+
+            cursor: pointer;
+        }
+
+        #search{
+            margin-top:35px;
+            overflow: hidden;
+        }
+        #search > div{
+            height : 120px;   
+            float: left;         
+        }
+        #search > div:nth-child(1){
+            width:25%;
+            background-image: url('images/main_dream.png');
+            background-repeat: no-repeat;
+            
+        }
+        #search > div:nth-child(2){
+            width:50%;            
+        }
+        #search > div:nth-child(3){
+            width:25%;
+        }
+
+        #search-bar{
+            width:595px;
+            height:50px;
+            
+            border : 3px solid #de142a;
+            border-radius: 30px;           
+
+            position:relative;
+        }
+
+        #search-bar button{
+            width:50px;
+            height:50px;
+            border-radius: 25px;       
+            border: none;     
+            background-color: #de142a;
+            
+            background-image: url('images/ico_srh.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 40%;
+            
+
+            position: absolute;
+            right:0;bottom:0;
+
+            cursor: pointer;
+        }
+
+        #search-bar input{
+            width:495px;
+            height: 50px;
+            
+            font-size:1.4em;
+
+            margin-left:25px;
+            border:none;
+        }
+
+        #search-bar input:focus{
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        
+        <div id="header">
+            <div id="header-top">
+                <span id="date">07.31(수)</span>
+                <ul id="today-info">
+                    <li>/</li>
+                    <li>미세먼지 <span>좋음</span></li>
+                    <li>/</li>
+                    <li>초미세먼지 <span>좋음</span></li>
+                    <li>/</li>
+                    <li>오존<span>좋음</span></li>
+                </ul>
+                <ul id="user-menu">
+                    <li><span>SNS</span>
+                        <select>
+                            <option></option>
+                            <option>유튜브</option>
+                            <option>네이버 블로그</option>
+                            <option>페이스북</option>
+                        </select>
+                    </li>
+                    <li><span>Language</span>
+                        <select>
+                            <option></option>
+                            <option>EN</option>
+                            <option>JP</option>
+                            <option>CH</option>
+                        </select>
+                    </li>
+                    <li>회원가입</li>
+                    <li>로그인</li>
+                </ul>
+            </div>
+            <div id="header-body">
+                <div id="logo_gnb">
+                    <div id="logo"></div>
+                    <div id="gnb">
+                        <ul>
+                            <li>정보공개</li>
+                            <li>참여마당</li>
+                            <li>전자민원</li>
+                            <li>행정정보</li>
+                            <li>열린경제</li>
+                            <li>생활정보</li>
+                            <li>대전소개</li>
+                            <li>분야별정보</li>
+                        </ul>                       
+                    </div>
+                </div> <!--logo_gnb end-->
+
+                <div id="search">
+                    <div></div>
+                    <div>
+                        <div id="search-bar">
+                            <form action="https://search.daejeon.go.kr/RSA/front/Search.jsp?menu=통합검색" method="get">                                
+                                <input type="text" name="qt" />
+                                <button type="submit"></button>
+                            </form>
+                        </div>
+                        <div id="search-hash"></div>
+                    </div>
+                    <div></div>
+                </div> <!-- search end -->
+
+            </div>  <!-- header-body end-->            
+        </div>   <!-- header end -->  
+    </div>    <!-- wrap end -->  
+</body>
+</html>

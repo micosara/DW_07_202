@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+        ul{
+            overflow: hidden;    
+        }
+        li{
+            width:95px;     
+            float:left;    
+            list-style: none;   
+            text-align : center;
+            padding : 15px;
+            color:white;
+            cursor: pointer;
+            font-weight: bold;
+            
+            background:gray;
+        }
+        ul li:hover{
+            background:gray;
+        }
+
+        ul li:active{
+            background:white;
+        }
+
+        li:first-child{
+            border-radius: 10px 0 0 10px;
+        }
+        li:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+        li:nth-child(2n){
+            background:red;
+        }
+        li:nth-child(2n+1){
+            background:blue;
+        }
+
+        ul li > a{
+            color : white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="https://www.naver.com">NAVER</a></li>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.daum.net">Daum</a></li>
+        <li><a href="http://www.tjdaewoo.co.kr">DWAcademy</a></li>        
+    </ul>
+</body>
+</html>

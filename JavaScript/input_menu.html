@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let menu = prompt("A,B,C,D,E 중 아무거나 입력하세요.");
+        let message = "";
+
+
+        // if(menu == "A"){
+        //     message = "아메리카노";
+        // }else if(menu == "B"){
+        //     message = "카페라떼";
+        // }else if(menu == "C"){
+        //     message = "카페모카";
+        // }else if(menu == "D"){
+        //     message = "에스프레소";
+        // }else if(menu == "E"){
+        //     message = "카라멜마키야또";
+        // }else{
+        //     message = "입력이 올바르지 않습니다.";
+        // }
+
+        switch(menu){
+            case "A":
+                message += "아메리카노,";
+                break;
+            case "B":
+                message += "카페라떼,";
+                break;
+            case "C":
+                message += "카페모카,";
+                break;
+            case "D":
+                message += "에스프레소,";
+                break;
+            case "E":
+                message += "카라멜마키야또,";
+                break;
+            default:
+                message += "입력이 올바르지 않습니다.";
+        }
+
+
+        alert(message);
+    </script>
+</body>
+</html>

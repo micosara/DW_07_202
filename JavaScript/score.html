@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+       
+        let kor = Number(prompt("국어점수를 입력하시오."));
+        let math = Number(prompt("수학점수를 입력하시오."));
+        let scien = Number(prompt("과학점수를 입력하시오."));
+        let eng = Number(prompt("영어점수를 입력하시오."));
+
+        const SUBJECT_NUMBER = 4;
+
+        let total = kor + math + scien + eng;
+        let avg = total / SUBJECT_NUMBER;
+
+        let output = "국어:"+kor+","
+                   + "영어:"+eng+","
+                   + "과학:"+scien+","
+                   + "수학:"+math+"\n"
+                   + "총점:"+total+","
+                   + "평균:"+avg
+
+
+        alert(output);
+
+       if (avg >= 95){
+          output="A+";
+       }else if(avg >= 90)  {
+          output = "A";
+       }else if(avg >= 85){
+          output="B+";
+       }else if(avg >= 80){
+          output="B";
+       }else if(avg >= 75){
+          output="C+";
+       }else if(avg >= 70){
+          output="C";
+       }else if(avg >= 65){
+          output = "D+";
+       }else if(avg >= 60){
+          output = "D";
+       }else{
+        output = "F";
+       }
+        
+       
+
+
+        alert(output);
+    </script>
+</body>
+</html>

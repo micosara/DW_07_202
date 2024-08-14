@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0; padding:0;
+            font-size:12px;            
+        }
+
+        .circle100{
+            width:20px;
+            height:20px;
+            border-radius:10px;                            
+
+            float:left;
+        }
+
+        .circle50{
+            width:10px;
+            height:10px;
+            border-radius:5px;                            
+
+            float:left;
+        }
+ 
+
+        .red{
+            background :red;
+        }
+
+        div#box1{
+            width:800px;
+            
+        }
+
+
+        div#box1 > div {
+            overflow: hidden;            
+        }
+
+        .center{
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="box1">
+        <div class="center">
+            <div class="circle50 "></div>
+            <div class="circle100 "></div>
+            <div class="circle100 red"></div>            
+            <div class="circle100 "></div>            
+        </div>
+        <div class="center">
+            <div class="circle100 "></div>
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>            
+            <div class="circle100 "></div>
+            
+        </div>
+        <div class="center">
+            <div class="circle50 "></div>
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>
+         
+        </div>
+        <div class="center">
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>
+            <div class="circle100 red"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

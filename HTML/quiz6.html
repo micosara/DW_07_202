@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        *{
+            margin:0;padding:0;
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
+        }
+
+        #wrap{
+            width:1200px;
+            height:250px;
+
+            margin: 0 auto;
+
+            position:relative;
+
+            background-image: url('images/banner.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        #nav{
+            width:100%;
+            height:80px;
+
+            position:absolute;
+            left:0;bottom:0;
+        }
+
+        #nav > ul{
+            overflow: hidden;
+        }
+
+        #nav > ul > li{
+            height:80px;
+            list-style: none;
+            float:left;
+        }
+
+        #nav > ul > li:nth-child(1){
+            width:25%;         
+            padding:10px;
+
+            box-sizing: border-box;
+
+            background-color: #fefefe;
+            background-image: url('images/logo.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80%;
+/* 
+            font-size: 2.3em;
+            color:#fefefe;             */
+        }
+        #nav > ul > li:nth-child(2){
+            width:75%;            
+        }
+
+        #service{
+            list-style: none;
+
+            overflow: hidden;
+        }
+
+        #service > li{
+            width:12.5%;
+            height:80px;
+
+            float:left;
+
+            
+            background-color: #fefefe;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            border: 1px solid #f3f3f3;
+
+            box-sizing: border-box;
+
+            cursor: pointer;
+            /* 
+            font-size: 1.2em;
+            font-weight: 600;
+            color:#fefefe;
+
+            text-align: center;
+            line-height: 20px;
+
+            padding-top:25px;
+            box-sizing: border-box;             */
+        }
+
+        #service > li:nth-child(1){
+            background-image: url('images/ico_service_01.png');
+          
+        }
+        #service > li:nth-child(2){
+            background-image: url('images/ico_service_02.png');
+        }
+        #service > li:nth-child(3){
+            background-image: url('images/ico_service_03.png');
+        }
+        #service > li:nth-child(4){
+            background-image: url('images/ico_service_04.png');
+        }
+        #service > li:nth-child(5){
+            background-image: url('images/ico_service_05.png');
+        }
+        #service > li:nth-child(6){
+            background-image: url('images/ico_service_06.png');
+        }
+        #service > li:nth-child(7){
+            background-image: url('images/ico_service_07.png');
+        }
+        #service > li:nth-child(8){
+            background-image: url('images/ico_service_08.png');
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="nav">
+            <ul>
+                <li title="대전시 주요 서비스"></span></li>
+                <li>
+                    <ul id="service">
+                        <li title="분야별 민원서비스"></li>
+                        <li title="민원신청 (국민신문고)"></li>
+                        <li title="대전120콜센터상담톡"></li>
+                        <li title="OK예약서비스"></li>
+                        <li title="동물보호센터"></li>
+                        <li title="대전청년포털"></li>
+                        <li title="조직.업무안내"></li>
+                        <li title="대전통계"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding:0;
+            font-size: 12px;
+        }
+        .rec{
+            width:200px;
+            height:200px;
+            background: blue;
+        }
+
+        #wrap{
+            width:80%;
+            min-width: 800px;
+            max-width:1024px;
+            height:700px;
+            margin: 0 auto;
+        }
+
+        #wrap > div:nth-child(1){
+            position:relative;
+            height:200px;
+        }
+
+        #wrap > div:nth-child(1) div#top-left-box{
+            position:absolute;
+            left:0;top:0;
+        }
+        #wrap > div:nth-child(1) div#top-right-box{
+            position:absolute;
+            right:0;top:0;
+        }
+
+        #center{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div >
+            <div id="top-left-box" class="rec"></div>
+            <div id="top-right-box" class="rec"></div>
+        </div>
+        <div>
+            <div id="center" class="rec"></div>
+        </div>
+    </div>
+</body>
+</html>

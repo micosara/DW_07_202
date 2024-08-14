@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let age  = Number(prompt("나이를 입력하세요."));
+        let message = "";
+        
+        if(age && age >= 0){ //age 의 유효성
+            if(age >= 0 && age < 8){
+                message="영유아";
+            }else if(age >= 9 && age < 20){
+                message="청소년";
+            }else if(age >= 20 && age < 60){
+                message="성인";
+            }else {
+                message="노인";
+            }
+        }else{
+            message = "입력값이 올바르지 않습니다.";
+        }
+
+        
+
+        alert(message);
+
+    </script>
+</body>
+</html>

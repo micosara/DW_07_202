@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            
+        }
+
+        .box_wrap{             
+            width:700px;
+            margin:0 auto;
+                       
+            overflow: hidden;
+        }
+
+        .box_200{
+            width:200px;
+            height:200px;
+            border:1px solid black;
+
+            font-size:50px;
+            text-align:center;
+            line-height: 200px;
+        }
+
+        .box_left_sm{
+            float:left;            
+            margin:5px;
+        }
+
+        .box_left_md{
+            float:left;            
+            margin:15px;
+        }
+
+        .box_left_lg{
+            float:left;            
+            margin:25px;
+        }
+
+        .box_red{
+            background:rgb(255,0,0);
+        }
+        .box_blue{
+            background:rgb(0,0,255);
+        }
+        .box_green{
+            background:rgb(0,255,0);
+        }
+        .box_cyan{
+            background:#00ffff;
+        }
+        .box_magenta{
+            background:#ff00ff;
+        }
+        .box_yellow{
+            background:#ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box_wrap">
+            <div class="box_200 box_left_md box_red">Red</div>
+            <div class="box_200 box_left_md box_green">Green</div>
+            <div class="box_200 box_left_md box_blue">Blue</div>
+        </div>
+        <hr/>
+        <div class="box_wrap">
+            <div class="box_200 box_left_md box_cyan">Cyan</div>
+            <div class="box_200 box_left_md box_yellow">Yellow</div>
+            <div class="box_200 box_left_md box_magenta">Magenta</div>
+        </div>
+    </div>
+</body>
+</html>
