@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let subjectScore=[];
+        let total=avg=0;
+        let judge;
+        let message="";
+
+        //입력
+        let subjectName = ["국어","영어","과학", "수학","도덕","미술","음악","체육"];
+       
+        judge = 1; //초기화
+        for(let i=0; i<subjectName.length; i++){
+             subjectScore[i] = Number(prompt(subjectName[i]+" 점수"));
+             judge *=subjectScore[i];             
+        }
+
+        //처리
+        if(judge ==0 || judge){ //점수 입력 OK
+            for(let i=0; i<subjectName.length; i++){
+                total +=subjectScore[i];
+            }
+            avg = total/subjectName.length;
+
+            message = "총점 : "+total+"\n평균 : "+avg;
+
+        }else{ // 유효하지 않은 점수 입력
+            message = "점수가 올바르지 않습니다.";           
+        }
+
+        //출력
+        alert(message);
+
+    </script>
+</body>
+</html>
