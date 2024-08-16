@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let input;
+        let i;
+        let count;
+        let yacksu;
+
+        //입력
+        while(true){
+            input = Number(prompt("숫자를 입력하시오."));
+            if(input == 0 || input){ //숫자 여부
+                if(input%1 == 0){ // 정수 여부
+                    break;
+                }else{
+                    alert("정수를 입력해주세요.");
+                }
+            }else{                
+                alert("숫자가 아닙니다.\n똑바로 입력하세요.");
+            }
+            
+        }
+
+        //처리
+        count = 0;
+        yacksu = "";
+        for(i=1; i<input+1; i++){
+            if(input % i == 0){
+                count++;
+                yacksu = yacksu + i +", ";
+            }
+        }
+
+        //출력
+        alert("약수 개수 : "+count+"\n약수 : "+yacksu);
+
+    </script>
+</body>
+</html>
