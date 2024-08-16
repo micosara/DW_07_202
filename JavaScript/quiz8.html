@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 입력
+        let result = "";
+        let judge = false; // true : 정수, false:소수
+        let num;
+
+        while(true){
+            num = Number(prompt("숫자를 입력하세요."));
+            if(num==0 || num) break;
+            alert("입력값이 숫자가 아닙니다.");
+        }
+        
+        // 처리
+        if(num % 1 == 0){
+            // 정수
+            result = "정수입니다.";
+        }else{
+            // 소수
+            result = "소수입니다.";
+        }
+
+        // 출력
+        alert(result);
+    </script>
+</body>
+</html>
