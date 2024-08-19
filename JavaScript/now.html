@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="time">NOW</h1>
+
+    <script>
+        let now = function(){
+            // Date 객체를 선언합니다. 
+            let now = new Date(); 
+            // 요소를 추출합니다. 
+            let year = now.getFullYear(); 
+            let month = now.getMonth() + 1; 
+            let day = now.getDay(); 
+            let date = now.getDate();
+            let hours = now.getHours(); 
+            let minutes = now.getMinutes(); 
+            let seconds = now.getSeconds();
+
+            let time = year+"년 "+month+"월 "+date+"일 "+hours+":"+minutes+":"+seconds;
+
+            let h1 = document.getElementById("time");
+
+            h1.innerText = time;
+        }
+
+        now();
+        setInterval(now,1000);
+    </script>
+</body>
+</html>

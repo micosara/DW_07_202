@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //변수사용
+        let kor = 95;
+        let math = 90;
+        let eng = 80;
+        let scien = 67;
+
+        //배열사용
+        let subjectName = ["국어","수학","영어","과학"];
+        let subjectScore = [95,90,80,67];
+
+        //객체 : JSON
+        let score = {
+            "국어":95,
+            "수학":90,
+            "영어":80,
+            "과학":67,
+        };
+
+        let student ={           
+            "아현":score,
+            "예은":{
+                "국어":100,
+                "영어":100,
+                "수학":100,
+                "과학":100
+            }
+        };
+        
+
+        let studentName = prompt("학생명을 입력하세요.");
+        
+        if(student[studentName]){            
+            let subjectN = prompt("조회할 과목명을 입력하시오.");
+            
+            if(student[studentName][subjectN]){
+                let searchScore = student[studentName][subjectN];
+                alert("조회 점수 :"+searchScore);
+            }else{
+                alert("해당 과목은 존재하지 않습니다.");
+            }
+            
+        }else{
+            alert("해당 학생이 존재하지 않습니다.");
+        }
+
+    </script>
+</body>
+</html>
