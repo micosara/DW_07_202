@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button onclick="search_score();">성적조회</button>
     <script>
         //변수사용
         let kor = 95;
@@ -36,7 +36,7 @@
             }
         };
         
-
+    function search_score(){
         let studentName = prompt("학생명을 입력하세요.");
         
         if(student[studentName]){            
@@ -52,7 +52,7 @@
         }else{
             alert("해당 학생이 존재하지 않습니다.");
         }
-
+    }
     </script>
 </body>
 </html>
