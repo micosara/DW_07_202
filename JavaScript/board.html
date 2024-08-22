@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap{
+            width: 800px;
+            margin:0 auto;
+        }
+
+        ul#board{
+            min-height: 50px;            
+            width:600px;
+            margin:0 auto;
+
+            list-style: none;
+        }
+
+        ul#board li{            
+            margin-bottom:5px;
+        }
+
+        ul#board li:nth-child(2n){            
+            background: green;
+        }
+        ul#board li:nth-child(2n+1){            
+            background: purple;
+        }
+
+        #write{
+            width:600px;
+            margin:0 auto;
+        }
+
+        #write input{
+            margin-top:10px;
+            width:500px;
+        }
+        #write button{
+            width:80px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <ul id="board"></ul>
+
+        <div id="write">
+            <input type="text" name="insert" />
+            <button onclick="btn_click();">글추가</button>
+        </div>
+    </div>
+
+
+    <script>
+        function btn_click(){
+            let text = document.querySelector("input[name='insert']").value;
+            if(!text){
+                alert("내용이 없습니다.");
+                return;
+            }
+
+            text = "<li>"+text+"</li>";
+
+            let preText = document.querySelector("ul#board").innerHTML;
+
+            text = preText + text;
+
+            document.querySelector("ul#board").innerHTML=text;
+            document.querySelector("input[name='insert']").value='';
+        }
+
+    </script>
+</body>
+</html>
+

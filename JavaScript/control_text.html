@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Basic</title>
+</head>
+<body>
+
+    <div id="output"></div>
+
+    <script>        
+        // 변수를 선언합니다.
+        let output = '';
+        for (let i = 0; i < 10; i++) {
+            output += '<h1>Header - ' + i + '</h1>';
+        }
+
+        document.querySelector("div#output").innerText = output;
+        //document.querySelector("div#output").innerHTML = output;
+    </script>
+</body>
+</html>

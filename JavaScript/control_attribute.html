@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Basic</title>
+   
+</head>
+<body>
+    <input type="text" name="width" placeholder="너비" /> X 
+    <input type="text" name="height" placeholder="높이"/>&nbsp;&nbsp;&nbsp;
+    <input type="button" value="제출" onclick="btn_click();" />
+
+    <br/>
+
+    <img id="image" width="" height="" src="">
+
+    <script>
+        function btn_click(){
+            //alert("btn click");
+            let width = document.querySelector("input[name='width']").value;
+            let height = document.querySelector("input[name='height']").value;
+
+            let image = document.querySelector('#image');
+
+            if( !(Number(width) && Number(height)) ){
+                alert("입력값이 올바르지 않습니다.");
+                return;
+            }
+
+            // 속성을 변경합니다.
+            image.src = 'http://via.placeholder.com/'+width+'x'+height;
+            image.width = width;
+            image.height = height;
+        }
+    </script>
+
+</body>
+</html>
