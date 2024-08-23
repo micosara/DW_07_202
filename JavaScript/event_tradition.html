@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">버튼</button>
+
+    <h1 id="star">별표-</h1>
+
+
+    <script>
+        let btn = document.querySelector("button#btn");
+        btn.onclick=function(){
+            alert("btn click");
+        }
+
+        document.querySelector("h1#star").onclick=function(event){
+            //this.innerText = this.innerText + '★';
+
+            let h1 = event.currentTarget;
+            h1.innerText = h1.innerText + '★';
+        }
+
+
+    </script>
+</body>
+</html>

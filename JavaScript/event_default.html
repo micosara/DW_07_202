@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.naver.com" onclick="return false;">네이버</a>
+    <br/>
+    <a href="1111" onclick="alert('1111');return false;">1111</a>
+    <a href="2222" name="99999999" date-target="777777">2222</a>
+
+    <script>
+        document.querySelector("a[href='2222']").onclick=function(){
+            let name = "href"
+            
+            alert(this.getAttribute(name));
+            alert(this.name);
+            alert(this.getAttribute("date-target"));
+            return false;
+        }
+
+    </script>
+</body>
+</html>
