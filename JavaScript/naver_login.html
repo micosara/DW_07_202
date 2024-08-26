@@ -24,14 +24,59 @@
             background-repeat: no-repeat;
             background-size: contain;
         }
+
+        #login-body{
+            width:458px;
+            height: 330px;
+
+            margin-top:30px;
+
+            border-radius: 15px;
+            border : 1px solid #bbb;
+
+            box-sizing: border-box;
+            
+        }
+
+
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="login-header"></div>
-        <div id="login- body"></div>
+        <div id="login-header" onclick="naver_logo_click();"></div>
+        <div id="login-body">
+            <div id="box">
+                <div id="box-header">
+                    <span></span>
+                </div>
+                <div id="box-body">
+                    <div id="username">
+                        <input type="text" name="id" />
+                    </div>
+                    <div id="password">
+                        <input type="password" name="pwd" />
+                    </div>
+                </div>
+                <div id="box-footer">
+                    <button>로그인</button>
+                </div>
+            </div>
+        </div>
         <div id="login-footer"></div>      
 
     </div>
+
+    <script>
+        let login_header = document.querySelector("div#login-header");
+        login_header.style.cursor="pointer";
+        // login_header.onclick=function(event){
+        //      //alert("naver click");
+        //     location.href="https://www.naver.com";
+        // }
+
+        function naver_logo_click(){
+            location.href="https://www.naver.com";
+        }
+    </script>
 </body>
 </html>
