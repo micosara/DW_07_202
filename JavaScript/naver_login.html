@@ -6,6 +6,13 @@
     <title>Document</title>
 
     <style>
+        *{
+            margin:0;
+            padding: 0;
+
+            font-size: 16px;
+        }
+
         #wrap{
            width:450px;
            height:30px;           
@@ -38,8 +45,51 @@
             
         }
 
+        #login-body #box{
 
+            padding : 15px 20px;
+            
+        }
+
+        #login-body #box #box-header{
+            height:60px;
+        }
+
+        #login-body #box #box-header span{
+            font-weight:500;
+        }
+
+        #login-body #box #box-body{}
+
+        #login-body #box div#username{
+            height:60px;
+            box-sizing: border-box;
+
+            padding:10px 5px;
+
+            border:1px solid #bbb;
+            border-radius: 8px 8px 0 0;
+        }        
+        #login-body #box div#password{
+            height:60px;
+            box-sizing: border-box;
+
+            padding:10px 5px;
+
+            border:1px solid #bbb;
+            border-radius: 0px 0px 8px 8px;
+            border-top:none;
+        }  
+
+        #login-body #box input{
+            height:85%;
+            width:95%;                  
+
+            border:none;
+        }
     </style>
+
+
 </head>
 <body>
     <div id="wrap">
@@ -47,7 +97,7 @@
         <div id="login-body">
             <div id="box">
                 <div id="box-header">
-                    <span></span>
+                    <span>ID/전화번호</span>
                 </div>
                 <div id="box-body">
                     <div id="username">
