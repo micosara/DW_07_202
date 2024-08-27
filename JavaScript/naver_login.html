@@ -82,10 +82,53 @@
         }  
 
         #login-body #box input{
-            height:85%;
+            height:95%;
             width:95%;                  
 
+            margin-left:10px;
+
+            font-size:1.3em;
+
             border:none;
+        }
+
+        #login-body #box input:focus{
+            outline:none;
+        }
+
+        #box-footer > button{
+            width:100%;
+            height:60px;
+
+            margin-top:60px;
+
+            background-color: #09aa5c;
+
+            border:none;
+            border-radius: 8px;            
+
+            font-size: 1.2em;
+            font-weight:600;
+            color:#eee;
+
+            cursor: pointer;
+        }
+
+        #login-footer ul#menu{
+            width:350px;
+            height:60px;
+            margin: 0 auto;
+
+            list-style: none;
+
+            overflow: hidden;
+        }
+        
+        #login-footer #menu li{
+            
+            text-align: center;
+
+            float:left;
         }
     </style>
 
@@ -101,18 +144,26 @@
                 </div>
                 <div id="box-body">
                     <div id="username">
-                        <input type="text" name="id" />
+                        <input type="text" name="id" onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');" />
                     </div>
                     <div id="password">
                         <input type="password" name="pwd" />
                     </div>
                 </div>
                 <div id="box-footer">
-                    <button>로그인</button>
+                    <button onclick="login_btn_click();">로그인</button>
                 </div>
             </div>
         </div>
-        <div id="login-footer"></div>      
+        <div id="login-footer">
+            <ul id="menu">
+                <li><a href="#">비밀번호 찾기</a></li>
+                <li>|</li>
+                <li><a href="#">아이디 찾기</a></li>
+                <li>|</li>
+                <li><a href="#">회원가입</a></li>                
+            </ul>
+        </div>      
 
     </div>
 
@@ -126,6 +177,55 @@
 
         function naver_logo_click(){
             location.href="https://www.naver.com";
+        }
+
+        document.querySelector('input[name="id"]').onfocus=function(){
+            document.querySelector("div#username").style.borderColor="#09aa5c";
+        }
+        document.querySelector('input[name="id"]').onblur=function(){
+            document.querySelector("div#username").style.borderColor="#bbb";
+        }
+
+        document.querySelector('input[name="pwd"]').onfocus=function(){
+            document.querySelector("div#password").style.borderTop="1px solid #09aa5c"
+            document.querySelector("div#password").style.borderColor="#09aa5c";
+        }
+        document.querySelector('input[name="pwd"]').onblur=function(){
+            document.querySelector("div#password").style.borderTop="none";
+            document.querySelector("div#password").style.borderColor="#bbb";
+        }
+    </script>
+
+    <script>
+        function login_btn_click(){
+            //alert("login btn click");
+
+            let id = document.querySelector("input[name='id']");
+            let pwd = document.querySelector("input[name='pwd']");
+
+            //유효성체크
+            if(!id.value){
+                alert("아이디는 필수입력입니다.");
+                id.focus();
+                return;
+            }else if(!pwd.value){
+                alert("패스워드는 필수입력입니다.");
+                pwd.focus();
+                return;
+            }
+
+            //로그인 처리(임시)
+            if(id.value=='mimi' && pwd.value=='mimi'){
+                alert("로그인 성공입니다.\n5초 후 메인페이지로 이동합니다.");
+                setInterval(function(){
+                    location.href="https://www.naver.com";
+                },5000);
+            }else{
+                alert("아이디 혹은 패스워드가 일치하지 않습니다.");
+                pwd.value="";
+                id.focus();
+            }
+
         }
     </script>
 </body>
