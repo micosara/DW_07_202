@@ -117,7 +117,7 @@
         #login-footer ul#menu{
             width:350px;
             height:60px;
-            margin: 0 auto;
+            margin: 20px auto;
 
             list-style: none;
 
@@ -126,9 +126,20 @@
         
         #login-footer #menu li{
             
-            text-align: center;
+            text-align: center;            
+            float:left;  
+            
+            color:#777;
+        }
+        #login-footer #menu li:nth-child(2n+1){
+            width:30%;
+        }
+        #login-footer #menu li:nth-child(2n){
+            width:5%;
+        }
 
-            float:left;
+        #login-footer #menu li a:link,#login-footer #menu li a:visited{
+            color:#777;
         }
     </style>
 
