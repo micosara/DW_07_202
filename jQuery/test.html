@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="js/jquery-3.7.1.min.js"></script> -->
+     <script   src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1 id="greeting">안녕하세요.</h1>
+
+    <script>
+        // let message = document.querySelector("h1#greeting").innerHTML;
+        let message = $("h1#greeting").html();
+        alert(message);
+
+    </script>
+</body>
+</html>
