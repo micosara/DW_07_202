@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Basic</title>
+    
+    <style>
+        .box{
+            position: absolute;
+        }
+
+        body > div > .box:nth-child(1){
+            left:10px;top:50px;
+        }
+        body > div > .box:nth-child(2){
+            left:120px;top:50px;
+        }
+        body > div > .box:nth-child(3){
+            left:230px;top:50px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="circle_go();">●</button>&nbsp;&nbsp;
+    <button onclick="rect_go();">■</button>&nbsp;&nbsp;
+    <input type="text" >
+    <button onclick="shift_go();" > → </button>
+    <br/>
+    <div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        function circle_go(){
+            //alert("circle btn click");
+            $('.box').css({                
+                width: 100,
+                height: 100,
+                backgroundColor: 'red',
+                borderRadius:50
+            });
+        }
+        function rect_go(){
+            //alert("rect btn click");
+            $('.box').css({                
+                width: 100,
+                height: 100,
+                backgroundColor: 'red',
+                borderRadius:0
+            });
+        }
+        function shift_go(){
+            //alert("shift btn click");
+            $('.box').each(function(index){
+                //alert($(this).css("left"));
+                let left = Number($(this).css("left").replace('px',''));
+                $(this).css("left",left+10);
+                
+            });
+        }        
+    </script>
+   
+</body>
+</html>
