@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+
+            font-size: 16px;
+        }
+
+        #wrap{
+           width:450px;
+           height:30px;           
+           
+           margin:0 auto;
+           
+           margin-top:100px;
+           
+        }
+
+        #login-header{
+            height:64px;
+
+            background-image: url('./images/naver.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #login-body{
+            width:458px;
+            height: 330px;
+
+            margin-top:30px;
+
+            border-radius: 15px;
+            border : 1px solid #bbb;
+
+            box-sizing: border-box;
+            
+        }
+
+        #login-body #box{
+
+            padding : 15px 20px;
+            
+        }
+
+        #login-body #box #box-header{
+            height:60px;
+        }
+
+        #login-body #box #box-header span{
+            font-weight:500;
+        }
+
+        #login-body #box #box-body{}
+
+        #login-body #box div#username{
+            height:60px;
+            box-sizing: border-box;
+
+            padding:10px 5px;
+
+            border:1px solid #bbb;
+            border-radius: 8px 8px 0 0;
+        }        
+        #login-body #box div#password{
+            height:60px;
+            box-sizing: border-box;
+
+            padding:10px 5px;
+
+            border:1px solid #bbb;
+            border-radius: 0px 0px 8px 8px;
+            border-top:none;
+        }  
+
+        #login-body #box input{
+            height:95%;
+            width:95%;                  
+
+            margin-left:10px;
+
+            font-size:1.3em;
+
+            border:none;
+        }
+
+        #login-body #box input:focus{
+            outline:none;
+        }
+
+        #box-footer > button{
+            width:100%;
+            height:60px;
+
+            margin-top:60px;
+
+            background-color: #09aa5c;
+
+            border:none;
+            border-radius: 8px;            
+
+            font-size: 1.2em;
+            font-weight:600;
+            color:#eee;
+
+            cursor: pointer;
+        }
+
+        #login-footer ul#menu{
+            width:350px;
+            height:60px;
+            margin: 20px auto;
+
+            list-style: none;
+
+            overflow: hidden;
+        }
+        
+        #login-footer #menu li{
+            
+            text-align: center;            
+            float:left;  
+            
+            color:#777;
+        }
+        #login-footer #menu li:nth-child(2n+1){
+            width:30%;
+        }
+        #login-footer #menu li:nth-child(2n){
+            width:5%;
+        }
+
+        #login-footer #menu li a:link,#login-footer #menu li a:visited{
+            color:#777;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="wrap">
+        <div id="login-header" onclick="naver_logo_click();"></div>
+        <div id="login-body">
+            <div id="box">
+                <div id="box-header">
+                    <span>ID/전화번호</span>
+                </div>
+                <div id="box-body">
+                    <div id="username">
+                        <input type="text" name="id" onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣]/g, '');" />
+                    </div>
+                    <div id="password">
+                        <input type="password" name="pwd" />
+                    </div>
+                </div>
+                <div id="box-footer">
+                    <button onclick="login_btn_click();">로그인</button>
+                </div>
+            </div>
+        </div>
+        <div id="login-footer">
+            <ul id="menu">
+                <li><a href="#">비밀번호 찾기</a></li>
+                <li>|</li>
+                <li><a href="#">아이디 찾기</a></li>
+                <li>|</li>
+                <li><a href="#">회원가입</a></li>                
+            </ul>
+        </div>      
+
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        let login_header = $("div#login-header");
+        login_header.css("cursor","pointer");      
+
+        function naver_logo_click(){
+            location.href="https://www.naver.com";
+        }
+
+        $('input[name="id"]').focus(function(){
+            $("div#username").css("border-color","#09aa5c");
+        });
+        $('input[name="id"]').blur(function(){
+           $("div#username").css("border-color","#bbb");
+        });
+
+        $('input[name="pwd"]').focus(function(){
+            $("div#password").css("border-top","1px solid #09aa5c");
+            $("div#password").css("border-color","#09aa5c");
+        });
+
+        $('input[name="pwd"]').blur(function(){
+            $("div#password").css("border-top","none");
+            $("div#password").css("border-color","#bbb");
+        });
+    </script>
+
+    <script>
+        function login_btn_click(){
+            //alert("login btn click");
+
+            let id = $("input[name='id']");
+            let pwd = $("input[name='pwd']");
+
+            //유효성체크
+            if(!id.val()){
+                alert("아이디는 필수입력입니다.");
+                id.focus();
+                return;
+            }else if(!pwd.val()){
+                alert("패스워드는 필수입력입니다.");
+                pwd.focus();
+                return;
+            }
+
+            //로그인 처리(임시)
+            if(id.val()=='mimi' && pwd.val()=='mimi'){
+                alert("로그인 성공입니다.\n5초 후 메인페이지로 이동합니다.");
+                setInterval(function(){
+                    location.href="https://www.naver.com";
+                },5000);
+            }else{
+                alert("아이디 혹은 패스워드가 일치하지 않습니다.");
+                pwd.val("");
+                id.focus();
+            }
+
+        }
+    </script>
+</body>
+</html>

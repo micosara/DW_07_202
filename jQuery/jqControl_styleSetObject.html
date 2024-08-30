@@ -22,7 +22,7 @@
 <body>
     <button onclick="circle_go();">●</button>&nbsp;&nbsp;
     <button onclick="rect_go();">■</button>&nbsp;&nbsp;
-    <input type="text" >
+    <input type="text" id="shift" >
     <button onclick="shift_go();" > → </button>
     <br/>
     <div>
@@ -52,11 +52,18 @@
             });
         }
         function shift_go(){
+
+            let shift_unit = Number($('input#shift').val());
+            if(shift_unit!=0 && !shift_unit){
+                alert("입력이 올바르지 않습니다.");
+                return;
+            }
+            
             //alert("shift btn click");
             $('.box').each(function(index){
                 //alert($(this).css("left"));
                 let left = Number($(this).css("left").replace('px',''));
-                $(this).css("left",left+10);
+                $(this).css("left",left+shift_unit);
                 
             });
         }        
