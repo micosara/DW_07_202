@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.naver.com" onclick="return false;">NAVER</a>
+
+    <form id="frm" action="https://www.naver.com" onsubmit="return false;">        
+        아이디 : <input type="text" name="username"/><br/>
+        패스워드 : <input type="password" name="password"/><br/>
+        이메일 :<input type="text" name="email" /><br/>
+        전화번호 : <select name="phone">
+                    <option value="">선택하세요</option>
+                    <option value="10">010</option>
+                    <option value="11">011</option>
+                    <option value="12">012</option>
+                    <option value="16">016</option>
+                    <option value="17">017</option>
+                    <option value="18">018</option>
+                    <option value="19">019</option>
+                   </select>
+                   - <input type="text" name="phone" maxlength="4" style="width:50px;"/>
+                   - <input type="text" name="phone" maxlength="4" style="width:50px;"/>
+        <br/>        
+        <input type="button" value="가입하기" onclick="submit_go();"/>
+    </form>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        function submit_go(){
+            if(!$('input[name="username"]').val()){
+                alert("아이디는 필수입니다.");
+                return false;
+            }
+            if(!$('input[name="password"]').val()){
+                alert("패스워드는 필수입니다.");
+                return false;
+            }
+            if(!$('input[name="email"]').val()){
+                alert("email은 필수입니다.");
+                return false;
+            }
+            if(!$('select[name="phone"]').val()){
+                alert("통신사를 선택하세요.");
+                return false;
+            }
+
+            let flag=true;
+
+            $('input[name="phone"]').each(function(){
+                if(!$(this).val()){                  
+                    flag = false;                    
+                }
+            });
+
+            if(!flag){
+                alert("전화번호는 필수입니다.");
+                return false;
+            }
+
+
+
+            document.querySelector("#frm").submit();
+        }
+    </script>
+</body>
+</html>
