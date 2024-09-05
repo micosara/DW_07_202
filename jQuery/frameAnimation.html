@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Animation</title>
+    
+</head>
+<body>
+    <button id="start_btn">start</button>&nbsp;&nbsp;&nbsp;
+    <button id="stop_btn">stop</button><br/>
+    <img id="image">
+
+
+
+    <script>
+        let image = document.querySelector('#image'); 
+
+        let i=0
+      
+        let motion;
+
+        document.querySelector('#start_btn').onclick=function(){
+            motion = setInterval(function(){        
+                image.src= "images/"+(i%15)+".png";
+                i=i+1;
+            },1000/20);
+        };
+        document.querySelector('#stop_btn').onclick=function(){
+            //alert("stop btn")
+            clearInterval(motion);
+        };
+    </script>
+</body>
+</html>

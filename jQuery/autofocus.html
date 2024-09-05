@@ -3,7 +3,7 @@
 
 <head>
     <title>Input Autofocus</title>
-
+    
 </head>
 
 <body>
@@ -16,6 +16,24 @@
         // 문서 객체를 선택합니다.
         let input_1 = document.querySelectorAll('input')[0];
         let input_2 = document.querySelectorAll('input')[1];
+
+        // input_1
+        input_1.onkeyup = function () {
+            //console.log(this.value.length);
+            if (input_1.value.length >= 6) {  
+             // input_2 문서 객체로 포커스를 이동합니다. 
+                input_2.focus(); 
+            } 
+        };
+        input_2.onkeydown = function (event) {
+            //console.log(this.value.length);
+            // 이벤트 객체를 추출합니다. 
+            event = event || window.event; 
+            // 사용자의 입력이 '백 스페이스'이고 입력된 글자가 없을 때 
+            if (event.keyCode == 8 && input_2.value.length == 0) { 
+            input_1.focus(); 
+            } 
+        };
 
 
     </script>
