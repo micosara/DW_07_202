@@ -5,11 +5,31 @@
     
 </head>
 <body>
+    <button onclick="add_h1();">add h1</button>
+
+    <div id="target"></div>
+
+
+
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script>
-         //$('<h1>').text("jQuery로 만든 h1 tag").appendTo('body');
-            let h1 = $('<h1>').text("jQuery로 만든 h1 tag");
-            $('body').append(h1);
+    <script>        
+
+        let i=0;
+        function add_h1(){
+            //alert("h1 btn");
+            i=i+1;
+            let h1 = $('<h1>').text("jQuery로 만든 h1 tag_"+i);
+            //$('div#target').append(h1).css("background","green");
+            //$('div#target').prepend(h1).css("background","green");
+            $("div#target").css({
+                height:30,
+                background:"blue"
+            }).before(h1);
+
+
+
+        }   
+            
          
     </script>
 </body>
