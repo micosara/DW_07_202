@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Basic</title>
+
+</head>
+
+<body>
+    <button>GO</button>
+    <div id="box"></div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        let flag = false;
+        // 스타일을 변경합니다.
+        $('#box').css({
+            width: 100,
+            height: 100,
+            background: 'red'
+        }).hover(function(){
+            $('#box').animate({
+                    width: 300,
+                    opacity:0.5
+                });
+        },function(){
+            $('#box').animate({
+                    width:100,
+                    opacity:1
+                });
+        });
+        
+        
+        $('button').on('click',function(){
+            //alert("go btn click");
+            flag=!flag;
+            if(flag){
+                $('#box').animate({
+                    width: 300,
+                    opacity:0.5
+                });
+            }else{
+                $('#box').animate({
+                    width:100,
+                    opacity:1
+                });
+            }
+        });
+
+        
+
+    </script>
+</body>
+
+</html>
