@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Infinity Scroll</title>
+    
+</head>
+<body>
+    
+    <script src="js/jquery-3.7.1.min.js" ></script>
+    <script>
+         // 문서 객체 추가 함수
+        let appendDocument = function () {
+            for (var i = 0; i < 20; i++) {
+                // 문서 객체를 생성합니다.
+                $('body').append($('<h1>Infinity Scroll</h1>'));
+            }
+        };
+
+        // 초기에 문서 객체를 추가합니다.
+        appendDocument();         
+
+
+        $(window).scroll(function () { 
+        // 변수를 선언합니다. 
+            let scrollHeight = $(window).scrollTop() + $(window).height() + 100;
+            let documentHeight = $(document).height(); 
+
+            console.log(scrollHeight);
+            // 검사합니다. 
+            if (scrollHeight > documentHeight) { 
+                appendDocument(); 
+            } 
+        }); 
+
+    </script>
+
+</body>
+</html>

@@ -2,31 +2,54 @@
 <html>
 <head>
     <title>Frame Animation</title>
+    <style>
+        div#animate{
+            width:300px;
+            height:400px;
+            
+            background-color: red;
+
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
     
 </head>
 <body>
     <button id="start_btn">start</button>&nbsp;&nbsp;&nbsp;
     <button id="stop_btn">stop</button><br/>
     <img id="image">
+    <div id="animate"></div>
 
 
 
     <script>
         let image = document.querySelector('#image'); 
+        let div = document.querySelector('div#animate');
 
         let i=0
       
-        let motion;
+        let motion=null;
 
         document.querySelector('#start_btn').onclick=function(){
-            motion = setInterval(function(){        
+            if(!motion) {
+                motion = setInterval(function(){        
+
+                //image 태그    
                 image.src= "images/"+(i%15)+".png";
+
+                //div 태그 백그라운드
+                div.style.backgroundImage="url('"+ "images/"+(i%15)+".png" +"')";
+
                 i=i+1;
-            },1000/20);
+                },1000/20);
+            }
         };
         document.querySelector('#stop_btn').onclick=function(){
             //alert("stop btn")
             clearInterval(motion);
+            motion=null;
         };
     </script>
 </body>
