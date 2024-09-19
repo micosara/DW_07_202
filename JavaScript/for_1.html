@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>구구단 만들기</h3>
+    단수 : <input type="text" name="dan" /><br/>
+    곱수 : <input type="text" name="gop" /><br/>
+    <button onclick="gugudan();">구구단 만들기</button>
+    <hr/>
+    <div id="gugudan"></div>
+
+
+
+    <script>
+        function gugudan(){
+            //alert("click btn");
+            let dan = document.querySelector("input[name='dan']");
+            let gop = document.querySelector("input[name='gop']");
+            
+            if(!dan.value){
+                alert("단수는 필수입니다.");
+                dan.focus();
+                return;
+            }
+            if(!gop.value){
+                alert("곱수는 필수입니다.");
+                gop.focus();
+                return;
+            }
+
+            dan = Number(dan.value);
+            gop = Number(gop.value);
+
+            if(isNaN(dan)){
+                alert("단수는 숫자만 입력하세요.");
+                document.querySelector("input[name='dan']").focus();
+                return;
+            }
+            if(isNaN(gop)){
+                alert("곱수는 숫자만 입력하세요.");
+                document.querySelector("input[name='gop']").focus();
+                return;
+            }
+
+            let output = document.querySelector("div#gugudan");
+            output.innerHTML="";
+            for(let i=1;i<gop+1;i++){
+                output.innerHTML = output.innerHTML + "<h3>"+dan+" * "+i+" = "+(dan*i) + "</h3>";                             
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

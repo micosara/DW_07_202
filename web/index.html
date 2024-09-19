@@ -1,32 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUST 쇼핑몰</title>
+    <title>ON쇼핑몰</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
+
 <body>
-    <div id="wrapper">
+    <div id="wrap">
         <header>
-            <div id="logo">
-                <img src="https://via.placeholder.com/200x20" alt="logo">
+            <div class="top">
+                <div class="logo">
+                    <a href="#"><img src="images/logo.png" alt="로고"></a>
+                </div>
+                <nav class="menu">
+                    <ul class="navi">
+                        <li><a href="#">탑</a>
+                            <ul class="submenu">
+                                <li><a href="#">블라우스</a></li>
+                                <li><a href="#">티</a></li>
+                                <li><a href="#">셔츠</a></li>
+                                <li><a href="#">니트</a></li>
+                              </ul>
+                        </li>
+                        <li><a href="#">아우터</a>
+                            <ul class="submenu">
+                                <li><a href="#">자켓</a></li>
+                                <li><a href="#">점퍼</a></li>
+                                <li><a href="#">코트</a></li>
+                              </ul>
+                        </li>
+                        <li><a href="#">팬츠/스커트</a>
+                            <ul class="submenu">
+                                <li><a href="#">긴바지</a></li>
+                                <li><a href="#">짧은바지</a></li>
+                                <li><a href="#">스커트</a></li>
+                                <li><a href="#">데님</a></li>         
+                            </ul>
+                        </li>
+                        <li><a href="#">악세서리</a>
+                            <ul class="submenu">
+                                <li><a href="#">귀고리</a></li>
+                                <li><a href="#">목걸이</a></li>
+                                <li><a href="#">반지</a></li>
+                                <li><a href="#">팔찌</a></li> 
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div id="gnb">
-                <ul>
-                    <li><a href="#">탑</a></li>
-                    <li><a href="#">아우터</a></li>
-                    <li><a href="#">팬츠</a></li>
-                    <li><a href="#">악세서리</a></li>
-                </ul>
+        </header>
+        <div class="bodywrap">
+            <div class="imgslide"></div>
+            <div class="contents">
+                <ul class="tabmenu"></ul>
+                <div class="otherwrap">
+                    <div class="banner"></div>
+                    <div class="shortcut"></div>
+                </div>
             </div>
-        </header>        
-        <section>
-            <div id="side"></div>
-            <div id="contents"></div>
-        </section>
-        <footer></footer>
+        </div>
+        <footer>
+            <div class="btlogo"></div>
+            <div class="copy"></div>
+            <div class="sns"></div>
+        </footer>
     </div>
+
+<script src="javascript/jquery-1.12.3.js"></script>    
+<script src="javascript/script.js"></script>    
 </body>
+
 </html>

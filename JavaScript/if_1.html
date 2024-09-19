@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="number" /><button onclick="confirm();" >검사</button>
+
+
+
+    <script>
+        function confirm(){
+            let number = document.querySelector("input[name='number']").value;
+            number = Number(number);
+
+            if(isNaN(number)){ 
+                alert("입력이 잘못되었습니다.");
+                return;
+            }
+
+            if(number % 2 == 0){
+                alert("짝수입니다.");
+            }else{
+                alert("홀수입니다.");
+            }
+        }
+    </script>
+
+</body>
+</html>
