@@ -106,6 +106,36 @@ ul.navi>li{
 	margin-top:10px;
 	margin-bottom:10px;
 }
+.tabmenu>li{      /*탭 타이틀 영역 스타일*/
+	float:left;
+	width:100px;
+	line-height:30px;
+}
+.tabmenu>li>a{    /*탭 타이틀 영역 <a> 요소 스타일*/
+	display:block; 
+	font-size:16px;
+	text-align:center; 
+	background-color:#cccccc; 
+	border:1px solid #dddddd;
+	border-bottom:none;
+}
+.tabmenu>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#eeeeee;
+}
+.tabmenu>li:first-child a{ /*탭 타이틀 첫 번째 요소의 <a> 요소 스타일*/ 
+	border-right:none;
+}
+.tabmenu>li.active>a{ /*active 클래스가 추가된 <a> 요소 스타일*/ 
+	background-color:#ffffff; 
+}
+.tabmenu>li div{        /*탭 콘텐츠 영역 스타일*/
+	position:absolute;
+	left:0px;
+	height:148px;
+	overflow:hidden;
+	top:40px;
+}
+
 
 .otherwrap{        /*banner와 shortcut 묶어줌*/
 	float:right;
@@ -121,6 +151,26 @@ ul.navi>li{
     margin-bottom:10px;
 }
 
+.otherwrap .banner img{       /*배너 이미지 스타일*/
+	height:180px;
+	width:395px;
+}
+.otherwrap .bntext{           /*배너 글자 스타일*/	
+	height:40px;
+	width:300px;
+	position:absolute;
+	text-align:center;
+	color:#ffffff;
+	font-weight:bold;
+	line-height:40px;
+	background-color:rgba(40,40,40,0.3);
+	left:450px;
+	top:80px;
+}
+.banner img:hover{ 
+	opacity:0.5;
+}
+
 .otherwrap .shortcut{
 	float:right;
 	height:180px; /*바로가기 영역 높이*/
@@ -128,3 +178,42 @@ ul.navi>li{
 	margin-top:10px;
 	margin-bottom:10px;
 }
+.otherwrap .shortcut img{     /*바로가기 이미지 스타일*/	
+	height:180px;
+	width:400px;
+}
+.otherwrap .sctext{           /*바로가기 글자 스타일*/
+	float:right;
+	height:40px;
+    width:300px;
+    position:absolute;
+    text-align:center;
+	color:#ffffff;
+	font-weight:bold;
+    line-height:40px;
+    background-color:rgba(40,40,40,0.3);
+	left:850px;
+	top:80px;
+}
+.shortcut img:hover{   
+	opacity:0.5;
+}
+
+.imgslide>a{
+    display:block; 
+    position:absolute; 
+}
+.imgtext{
+    height:50px;
+    width:500px;
+    position:absolute;
+    margin: -30px 0 0 -250px;
+    text-align:center;
+    color:#ffffff;
+    font-weight:bold;
+    line-height:50px;
+    background-color:rgba(40,40,40,0.5);
+    left:50%;
+    top:50%;  
+}
+
