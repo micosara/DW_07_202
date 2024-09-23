@@ -131,9 +131,51 @@ ul.navi>li{
 .tabmenu>li div{        /*탭 콘텐츠 영역 스타일*/
 	position:absolute;
 	left:0px;
-	height:148px;
+	height:0px;
 	overflow:hidden;
 	top:40px;
+}
+.tabmenu>li.active div{ /*active 클래스가 추가된 탭 콘텐츠 영역 스타일*/
+	width:393px; 
+	height:148px; 
+	border:1px solid #dddddd;
+	z-index:1;
+}
+.notice ul{  /*공지사항 콘텐츠 영역 스타일*/
+	float:left;
+	width:393px; 
+	margin-top:12px;
+	margin-bottom:12px;
+}
+.notice li{  /*공지사항 리스트 영역 스타일*/
+	height:32px;
+	line-height:32px;
+	font-size:15px;
+	margin-left:10px;
+	margin-right:10px;
+}
+.notice li:nth-child(2n){ /*공지사항 중 2배수 리스트 스타일*/
+	background-color:#cccccc;
+}
+.notice li span{   /*<span>요소로 구성한 날짜 영역 스타일*/
+	float:right;
+}
+.notice li:hover{  /*공지사항 리스트 영역에 마우스를 올릴 때 스타일*/
+	font-weight:bold;
+}
+
+.gallery li{  /*갤러리 콘텐츠 영역 스타일*/
+	float:left;
+	margin-top:15px;
+	margin-left:5px;
+}
+.gallery img{ /*갤러리 콘텐츠 이미지 영역 스타일*/
+	height:100px;
+	width:100px;
+	padding:10px;
+}
+.gallery li:hover{ /*갤러리 콘텐츠에 마우스를 올릴 때 스타일*/
+	opacity:0.5;
 }
 
 
@@ -217,3 +259,53 @@ ul.navi>li{
     top:50%;  
 }
 
+footer{
+	height:100px;  /*하단 높이*/
+	width:1200px;  /*하단 너비*/
+	background-color:#5e1742;
+}
+
+.btlogo{         
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:250px;  /*로고 영역 너비*/
+}		
+.btlogo img{
+	float:left;
+	height:50x;
+	width:200px;
+	margin-top:25px;
+	margin-left:15px;
+}
+
+.copy{
+	float:left;
+	height:100px; /*Copyright 높이*/
+	width:600px;  /*Copyright 너비*/
+	color:#ffffff;
+    text-align:center;
+    font-size:16px;
+    line-height:100px;
+}
+.sns{
+	float:right;
+	height:100px; /*sns 높이*/
+	width:300px;  /*sns 너비*/
+}
+.sns ul{        
+	margin-right:20px;
+	margin-top:25px;
+	overflow: hidden;
+}
+.sns ul li{      
+	float:right;    
+}
+
+.sns img{      
+	height:45px;
+	width:45x;
+	padding:5px;
+}
+.sns img:hover{
+	opacity:0.5;
+}
