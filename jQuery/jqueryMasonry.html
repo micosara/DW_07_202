@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            background: black;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        for(let i=0;i<100;i++){
+            let div = $('<div>').addClass('box').css({
+                width:200,
+                height:Math.floor(Math.random()*100+100)
+            });
+
+            $('body').append(div);
+        }
+
+        $('body').masonry({             
+            columnWidth:210
+        });
+    </script>
+   
+</body>
+
+</html>

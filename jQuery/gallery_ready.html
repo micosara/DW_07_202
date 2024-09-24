@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slider Gallery</title>
+    <style>
+        div.item:nth-child(1) {
+            background: blueviolet;
+        }
+
+        div.item:nth-child(2) {
+            background: pink;
+        }
+
+        div.item:nth-child(3) {
+            background-color: burlywood;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div data-role="slider" data-width="500" data-height="300">
+        <div class="container">
+            <div class="item">
+                <h1>Lorem ipsum dolor sit amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
+                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
+                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
+                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
+                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
+                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+            <div class="item">
+                <h1>Proin in urna turpis.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
+                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
+                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
+                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
+                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
+                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+            <div class="item">
+                <h1>Duis malesuada lorem neque.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
+                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
+                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
+                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
+                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
+                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+            </div>
+        </div>
+    </div>
+    <button id="left-button">←</button>
+    <button id="right-button">→</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script>
+        let width = $('[data-role="slider"]').attr('data-width');
+        let height = $('[data-role="slider"]').attr('data-height');
+        let count = $('[data-role="slider"] div.item').length;
+
+        $('div[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position: 'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            })
+    </script>
+</body>
+
+</html>
