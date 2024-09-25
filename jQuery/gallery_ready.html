@@ -4,17 +4,7 @@
 <head>
     <title>Slider Gallery</title>
     <style>
-        div.item:nth-child(1) {
-            background: blueviolet;
-        }
-
-        div.item:nth-child(2) {
-            background: pink;
-        }
-
-        div.item:nth-child(3) {
-            background-color: burlywood;
-        }
+       
     </style>
 
 </head>
@@ -22,33 +12,9 @@
 <body>
     <div data-role="slider" data-width="500" data-height="300">
         <div class="container">
-            <div class="item">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
-                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
-                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
-                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
-                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
-                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-            </div>
-            <div class="item">
-                <h1>Proin in urna turpis.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
-                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
-                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
-                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
-                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
-                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-            </div>
-            <div class="item">
-                <h1>Duis malesuada lorem neque.</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra ex a augue porta, quis luctus
-                    eros sollicitudin. Nullam in turpis semper, lacinia justo a, facilisis lacus. Nunc odio nisi,
-                    lobortis sit amet diam et, vestibulum posuere risus. Donec viverra, risus a ultricies fringilla,
-                    lectus purus aliquet quam, sit amet commodo nisl mi vitae nunc. Nulla cursus non urna eu elementum.
-                    Integer at mi auctor mi suscipit dapibus nec non orci. Nunc ipsum nulla, scelerisque id enim nec,
-                    lobortis ornare leo. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-            </div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
         </div>
     </div>
     <button id="left-button">←</button>
@@ -70,7 +36,50 @@
                 position: 'absolute',
                 width: count * width,
                 overflow: 'hidden'
-            })
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left',
+                "background-position":"center",
+                "background-size":"contain",
+                "background-repeat":"no-repeat"
+        });
+
+        for(let i=1;i<4;i++){
+            $('.item:nth-child('+i+')').css("background-image","url('images/"+i+".jpg')");
+        }
+
+        let currentPage = 0;
+        let changePage = function () {
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                }, 500);
+            };
+          // 이벤트를 연결합니다.
+          $('#left-button').click(function () { 
+            //alert("left btn click");
+            if (currentPage > 0) {
+                    // 왼쪽으로 이동
+                    currentPage = currentPage - 1;
+                    changePage();
+                    $('#right-button').css("display","inline");
+            }else if(currentPage==0){
+                $(this).css("display","none");
+                $('#right-button').css("display","inline");
+            }
+          });
+          $('#right-button').click(function () {
+            //alert("right btn click");
+            if (currentPage < count - 1) {
+                    // 오른쪽으로 이동
+                    currentPage = currentPage + 1;
+                    changePage();
+                    $('#left-button').css("display","inline");
+            }else if(currentPage == count-1){
+                $(this).css("display","none");
+                $('#left-button').css("display","inline");
+            }
+          });
     </script>
 </body>
 
