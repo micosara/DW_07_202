@@ -1,0 +1,140 @@
+@charset 'utf-8';
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+
+/* div#wrap{
+	width:1200px;
+	margin:0 auto;
+} */
+
+/* header */
+header {
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+header .inner {
+	width: 1180px;
+	height: 120px;
+	margin: 0px auto;
+	position: relative; /*자식 absolute 요소의 기준점 설정*/
+}
+
+header .inner h1 {
+	position: absolute;
+	left: 0px;
+	bottom: 15px;
+}
+header .inner h1 a {
+	font: bold 24px "arial";
+	color: #444;
+}
+
+header .inner .util {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+}
+header .inner .util li {
+	float: left;
+}
+header .inner .util li a {
+	display: block;
+	font: 12px "arial";
+	color: #999;
+	padding: 0px 10px;
+}
+header .inner #gnb {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+header .inner #gnb li {
+	float: left;
+}
+header .inner #gnb li a {
+	display: block; /*인라인 요소는 block설정하여 크기를 조절가능*/
+	font: bold 15px "arial";
+	color: #555;
+	padding: 20px 40px;
+	transition: all 0.5s;
+}
+header .inner #gnb li a:hover {
+	background: #555;
+	color: #fff;
+}
+
+/* figure */
+figure {
+	width: 100%;
+	height: calc(100vh - 120px); /*전체 브라우저 높이에서 120px만큼 빼줌*/
+	background: #000;
+	position: relative;
+	overflow: hidden;
+	padding-top: 250px;
+}
+figure video {
+	object-fit: cover; /*영상을 figure안쪽에 꽉 차도록 설정*/
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+figure .inner {
+	width: 1180px;
+	margin: 0px auto;
+	position: relative;
+}
+figure .inner h1 {
+	font: normal 120px "arial";
+	color: #fff;
+	margin-bottom: 20px;
+}
+figure .inner p {
+	font: 16px "arial";
+	color: #888;
+	margin-bottom: 60px;
+}
+figure .inner a {
+	display: block;
+	width: 400px;
+	height: 30px;
+	border: 1px solid #bbb;
+	font: bold 11px/30px "arial";
+	color: #fff;
+	text-align: center;
+	letter-spacing: 1px;
+	transition: all 0.5s;
+}
+figure .inner a:hover {
+	background: #fff;
+	color: #555;
+}
+
+/* section */
+
+section {
+	width: 100%;
+	padding: 200px 0px;
+}
+
+section .inner {
+	width: 1180px;
+	margin: 0px auto;
+}
+section .inner h1 {
+	font: bold 24px "arial";
+	color: #555;
+	text-align: center;
+	margin-bottom: 50px;
+}
