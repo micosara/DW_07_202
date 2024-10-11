@@ -60,6 +60,124 @@ figure > p {
 	opacity: 0.8;
 }
 
+/* section */
+figure section { /*음악 플레이어 패널 프레임 그룹*/
+	width: 20vw;
+	height: 65vh;
+	position: absolute;
+	left: 50%;
+	top: 140%;  
+	margin-top: -25vh;
+	margin-left: -10vw;	
+	transition: 1s; 
+}
+figure section article { /*개별 음악 플레이어 패널*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+figure section article .inner { /*음악 플레이어 패널 콘텐츠 그룹*/
+	width: 100%;
+	height: 100%;
+	background: #f0f7ff;
+	padding: 5vh 2.5vw 8vh;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-content: space-between; /*자식 콘텐츠의 안쪽 세로 여백을 균등 배치*/
+	flex-wrap: wrap;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+	opacity: 0.6; /*투명도를 낮춰서 비활성화*/
+	transform: scale(0.8); /*축소시켜서 비활성화*/
+	transition: opacity 1s, transform 1s; 
+}
+figure section article.on .inner {
+	opacity: 0.9;
+	transform: scale(1.1); 
+}
+figure section article .inner .pic {
+	width: 15vw;
+	height: 15vw;
+	margin: 0px auto;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: 200%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+figure section article .inner .pic::before,
+figure section article .inner .pic::after {
+	content: "";
+	display: block;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-image: inherit;
+	background-position: center;
+	background-repeat: inherit;
+	background-size: cover;
+	transform-origin: center center;	
+}
+figure section article .inner .pic::before {
+	transform: translateY(10%);
+	filter: blur(20px) brightness(1.6);
+}
+figure section article .inner .pic .dot {
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	background: #e4f1ff;
+	position: relative;
+	z-index: 3;
+	box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+figure section article .inner .txt {
+	text-align: center;
+	position: relative;
+	z-index: 3;
+}
+figure section article .inner .txt h2 {
+	font-size: 20px;
+	font-family: "arial";
+	color: #222;
+	margin-bottom: 2vh;
+}
+figure section article .inner .txt p {
+	font-size: 12px;
+	margin-bottom: 3vh;
+	color: #777;
+}
+figure section article .inner .txt ul {
+	display: flex;
+	justify-content: space-around;
+}
+figure section article .inner .txt ul li {
+	cursor: pointer;
+	opacity: 0.6;
+	transition: 0.5s;
+}
+figure section article .inner .txt ul li.play {
+	transform: scale(1.5);
+	opacity: 0.9;
+}
+figure section article .inner .txt ul li:hover {
+	transform: scale(1.5);
+	opacity: 0.8;
+}
+figure section article .inner .txt ul li.play:hover {
+	transform: scale(2);
+	opacity: 1;
+}
+
 /* button */
 figure .btnPrev {
 	width: 60px;
@@ -83,6 +201,38 @@ figure .btnPrev span {
 figure .btnPrev:hover span {
 	opacity: 0;
 	transform: translateX(100%);
+}
+figure .btnPrev::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnPrev::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnPrev:hover::before {
+	transform: rotate(-30deg);
+}
+figure .btnPrev:hover::after {
+	transform: rotate(30deg);
 }
 
 figure .btnNext {
@@ -108,4 +258,37 @@ figure .btnNext span {
 figure .btnNext:hover span {
 	opacity: 0;
 	transform: translateX(-100%);
+}
+
+figure .btnNext::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnNext::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnNext:hover::before {
+	transform: rotate(30deg);
+}
+figure .btnNext:hover::after {
+	transform: rotate(-30deg);
 }
