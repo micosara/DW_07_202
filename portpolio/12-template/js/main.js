@@ -15,4 +15,86 @@ for(let el of lists) {
     pic.style.backgroundImage = `url(img/member${i+1}.jpg)`;
     
     i++;
+
+    //각 article 요소 안쪽의 재생, 정지, 처음부터 재생 버튼을 변수에 저장
+    let play = el.querySelector(".play");
+    let pause = el.querySelector(".pause");
+    let load = el.querySelector(".load");
+
+     //play버튼 클릭 시, 
+    play.addEventListener("click", e=>{
+        let isActive = e.currentTarget.closest("article").classList.contains("on");
+        if(isActive){
+            e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
+            e.currentTarget.closest("article").querySelector("audio").play(); 
+        }              
+    });
+
+     //pause버튼 클릭 시
+     pause.addEventListener("click", e=>{
+        let isActive = e.currentTarget.closest("article").classList.contains("on");
+        if(isActive){
+            e.currentTarget.closest("article").querySelector(".pic").classList.remove("on");
+            e.currentTarget.closest("article").querySelector("audio").pause();
+        }
+                
+    });
+
+     //load버튼 클릭 시
+     load.addEventListener("click", e=>{
+        let isActive = e.currentTarget.closest("article").classList.contains("on");
+        if(isActive){
+            e.currentTarget.closest("article").querySelector(".pic").classList.add("on");
+            e.currentTarget.closest("article").querySelector("audio").load();   
+            e.currentTarget.closest("article").querySelector("audio").play(); 
+        }          
+    });
+}
+
+const audio = frame.querySelectorAll("audio");
+//모든 오디오 요소를 반복하면서 정지시키고 .pic 요소의 모션을 중지해서 초기화하는 함수
+function initMusic(){
+    for( let el of audio ){
+        el.pause();
+        el.load();
+        el.closest("article").querySelector(".pic").classList.remove("on");
+    }
+}
+
+const prev = document.querySelector(".btnPrev");
+const next = document.querySelector(".btnNext");
+
+prev.onclick=function(e){
+    //alert("prev click");
+     //음악 초기화 함수 실행
+     initMusic();
+
+    //num값을 증가시키며 frame 45도 만큼 증가시키며 시계 방향으로 계속 회전
+    num++;  
+    frame.style.transform = `rotate(${deg* num}deg)`;    
+
+    (active == 0 ) ? active = len : active--;
+    activation(active, lists);    
+
+}
+
+
+next.onclick=function(e){
+    //alert("next click");
+     //음악 초기화 함수 실행
+    initMusic();
+
+    num--;  
+    frame.style.transform = `rotate(${deg* num}deg)`;    
+
+    (active == len ) ? active = 0 : active++;
+    activation(active, lists);    
+    
+}
+
+function activation(index, lists){
+    for( let el of lists){
+        el.classList.remove("on");
+    }
+    lists[index].classList.add("on");
 }
