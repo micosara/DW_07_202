@@ -144,3 +144,86 @@ main section article div p {
 	color: #777;
 	margin-bottom: 15px;
 }
+
+@media screen and (max-width: 1599px) {
+	header {
+		width: 350px;
+	}
+	main {
+		margin-left: 350px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 1199px) {
+	header {
+		width: 100%;
+		height: 80px;
+		position: relative;
+	}
+	header h1 {
+		font: bold 24px/1 "orbitron";
+		transform: translateY(-50%);
+	}
+	header h1::before,
+	header h1::after {
+		display: none;
+	}
+	header ul {
+		left: 83%;
+		bottom: 25px;
+	}
+	header ul li {
+		margin-right: 20px;
+	}
+	header ul li a {
+		font-size: 20px;
+	}
+	header ul li a span {
+		display: none;
+	}
+	main {
+		width: 100%;
+		margin-left: 0px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 899px) {
+	header ul {
+		left: 80%;
+	}
+	main section article {
+		width: 33.333%;
+	}
+}
+@media screen and (max-width: 679px) {
+	header ul {
+		left: 70%;
+	}
+	main section article {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 539px) {
+	header ul {
+		display: none;
+	}
+	main ul {
+		margin-right: 0px;
+		box-sizing: border-box;
+		padding: 0px 13px;
+	}
+	main ul li {
+		margin-right: 2%;
+		width: 32%;
+	}
+	main ul li:nth-of-type(1) {
+		margin-right: 0%;
+	}
+	main section article {
+		width: 100%;
+	}
+}
